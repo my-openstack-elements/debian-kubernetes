@@ -12,7 +12,7 @@ for bin in "${binaries[@]}"; do
     curl -Lo $bin.sha256 "$base_url/$bin.sha256"
     echo "$(<$bin.sha256) $bin" | sha256sum --check
     rm -f "$bin.sha256"
-    install -o root -g root -m 0755 $bin /usr/local/bin/$bin
+    install -o root -g root -m 0755 $bin /usr/bin/$bin
 done
 
 SCRIPTDIR=$(dirname $0)
